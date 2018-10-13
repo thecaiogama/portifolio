@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Post(props) {
   const { title } = props,
@@ -16,5 +17,11 @@ function Post(props) {
     </div>
   );
 }
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+};
 
 export default Post;
