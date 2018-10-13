@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import PostFeed from './components/PostFeed';
+import Contact from './components/Contact';
+import 'tachyons/css/tachyons.min.css';
+
 import './App.css';
 
 class App extends Component {
+  state = {
+    contatctEmail: 'thecaiogama@gmail.com'
+  };
+
   render() {
+    const { contatctEmail } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <header>
+          <p>Hi, welcome</p>
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            I am Caio Gama, skater, scientist and (sometimes){' '}
+            <a href="https://www.instagram.com/thecaiogama/" target="_blank">
+              drawer
+            </a>{' '}
+            based in São Paulo. I also{' '}
+            <a href="https://github.com/thecaiogama" target="_blank">
+              do some coding
+            </a>
+            , and work as an{' '}
+            <a href="https://www.linkedin.com/in/thecaiogama" target="_blank">
+              user researcher @ Nubank
+            </a>
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
+        <PostFeed />
+        <Contact email={contatctEmail} />
       </div>
     );
   }
